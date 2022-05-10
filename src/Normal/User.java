@@ -2,12 +2,12 @@ package Normal;
 
 public class User {
     private String name;
-    private int pass;
+    private String pass;
 
     public User() {
     }
 
-    public User(String name, int pass) {
+    public User(String name, String pass) {
         this.name = name;
         this.pass = pass;
     }
@@ -20,11 +20,11 @@ public class User {
         this.name = name;
     }
 
-    public int getPass() {
+    public String getPass() {
         return pass;
     }
 
-    public void setPass(int pass) {
+    public void setPass(String pass) {
         this.pass = pass;
     }
 

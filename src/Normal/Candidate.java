@@ -6,7 +6,7 @@ public class Candidate {
     private String address;
     private String block;
 
-    public Candidate() {
+    public Candidate(String s, String s1) {
     }
 
     public Candidate(int idNumber, String name, String address,String block) {
@@ -14,7 +14,7 @@ public class Candidate {
         this.name = name;
         this.address = address;
         this.block=block;
-    }
+            }
 
     public int getIdNumber() {
         return idNumber;
@@ -48,9 +48,9 @@ public class Candidate {
         this.block = block;
     }
 
-    @Override
+       @Override
     public String toString() {
         return
-                idNumber + "," + name + "," + address + ","+ block+"\n" ;
+                idNumber + "," + name + "," + address + ","+ block+ "\n" ;
     }
 }

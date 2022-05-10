@@ -4,13 +4,9 @@ import File.CandidateFile;
 import Normal.Candidate;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ManegeCandidate {
-    private int quantity=0;
     private CandidateFile candidateFile;
     List<Candidate>candidateList=new ArrayList<>();
 
@@ -33,7 +29,6 @@ public class ManegeCandidate {
 
     public void add(Candidate candidate) throws FileNotFoundException {
         this.candidateList.add(candidate);
-        quantity++;
         CandidateFile.writeToFile(candidateList);
     }
     public void display(){
@@ -57,7 +52,6 @@ public class ManegeCandidate {
         }
         else {
             this.candidateList.remove(indexOfId);
-            quantity--;
         }
     }
     public void edit(int idNumber,Candidate candidate){
@@ -76,7 +70,7 @@ public class ManegeCandidate {
             }
         }
     }
-    public void sortinId(){
+    public void sortInId(){
         Collections.sort(this.candidateList, new Comparator<Candidate>() {
             @Override
             public int compare(Candidate candidate1, Candidate candidate2) {

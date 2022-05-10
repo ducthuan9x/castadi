@@ -32,7 +32,7 @@ public class CandidateFile {
     public static void writeToFile(List<Candidate> list) throws FileNotFoundException {
         File candidateFile = new File("candidate.csv");
         PrintWriter printWriter = new PrintWriter(candidateFile);
-        printWriter.print("idNumber,name,address\n");
+        printWriter.print("idNumber,name,address,block\n");
         for ( int i=0; i< list.size(); i++) {
             printWriter.print(list.get(i));
         }
