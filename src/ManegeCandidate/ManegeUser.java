@@ -35,17 +35,17 @@ public class ManegeUser {
         }
         return -1;
     }
-    public String display(String username,String pass){
-        String str = "username : ";
+    public String display(String name,String pass){
+        String str = "name = ";
         for (User user : userList) {
-            if (username.equals(user.getName())&&(user.getPass().equals(pass)))
+            if (name.equals(user.getName())&&(user.getPass().equals(pass)))
                 str += user.getName();
         }
         return str;
     }
-    public void displayInfor(String username,String pass){
+    public void displayInfor(String name,String pass){
         for (User user : userList) {
-            if (username.equals(user.getName())&&(user.getPass().equals(pass)))
+            if (name.equals(user.getName())&&(user.getPass().equals(pass)))
                 System.out.println(user);;
         }
     }

@@ -76,12 +76,12 @@ public class ManegeCandidate {
             public int compare(Candidate candidate1, Candidate candidate2) {
                 if (candidate1.getIdNumber() < candidate2.getIdNumber()) {
                     if (candidate1.getIdNumber() > candidate2.getIdNumber()) {
-                        return 1;
+                        return -1;
                     } else {
                         return 0;
                     }
                 } else {
-                    return -1;
+                    return 1;
                 }
             }
             });

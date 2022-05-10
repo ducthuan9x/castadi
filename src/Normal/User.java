@@ -30,9 +30,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", pass=" + pass +
-                '}';
+        return name + ","+pass+"\n";
     }
 }
