@@ -48,7 +48,7 @@ public class ManegeCandidate {
     public void delete(int idNumber){
         int indexOfId=seachById(idNumber);
         if(indexOfId==-1){
-            System.out.println("không có thí sinh này");
+            System.out.println("KHÔNG CÓ THÍ SINH NÀY ĐÂU MÀ TÌM!!");
         }
         else {
             this.candidateList.remove(indexOfId);
@@ -57,7 +57,7 @@ public class ManegeCandidate {
     public void edit(int idNumber,Candidate candidate){
         int indexOfId=seachById(idNumber);
         if(indexOfId==-1){
-            System.out.println("không có thí sinh này");
+            System.out.println("KHÔNG CÓ THÍ SINH NÀY ĐÂU MÀ TÌM!!");
         }
         else {
             this.candidateList.set(indexOfId,candidate);

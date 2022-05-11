@@ -6,10 +6,14 @@ public class Candidate {
     private String address;
     private String block;
 
-    public Candidate(String s, String s1) {
+    public Candidate() {
     }
 
-    public Candidate(int idNumber, String name, String address,String block) {
+    public Candidate(String block) {
+        this.block = block;
+    }
+
+    public Candidate(int idNumber, String name, String address, String block) {
         this.idNumber = idNumber;
         this.name = name;
         this.address = address;

@@ -20,13 +20,13 @@ public class Main {
         int choice = -1;
         Scanner sc = new Scanner(System.in);
         do {
-            System.out.println("1.Đăng Nhập ");
-            System.out.println("                                     ");
-            System.out.println("2.Đăng kí ");
-            System.out.println("                                     ");
-            System.out.println("0.Thoát");
-            System.out.println("                                     ");
-            System.out.print("Nhập lựa chon : ");
+            System.out.println("=================1.Đăng Nhập======================");
+            System.out.println("==                                              ==");
+            System.out.println("=================2.Đăng kí========================");
+            System.out.println("==                                              ==");
+            System.out.println("==================0.Thoát=========================");
+            System.out.println("==                                              ==");
+            System.out.println("=====================Nhập lựa chon================");
             try {
                 choice = scanner.nextInt();
 //      bắt ngoại lệ1
@@ -43,19 +43,20 @@ public class Main {
                     System.out.println("Nhập userpass : ");
                     String pass = sc.nextLine();
                     if (manegeUser.find(name, pass) != -1) {
-                        System.out.println("Bạn đăng nhập thành công ");
-                        System.out.println("                                      ");
+                        System.out.println("===========BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG============");
+                        System.out.println("==                                              ==");
                         System.out.println(manegeUser.display(name, pass));
                         int choice1 = -1;
                         do {
-                            System.out.println("1.Vào trang quản lý : ");
-                            System.out.println("                                     ");
-                            System.out.println("2.Xem thông tin tài khoản : ");
-                            System.out.println("                                     ");
-                            System.out.println("3.Đăng xuất : ");
-                            System.out.println("                                     ");
-                            System.out.print("Nhập lựa chọn của bạn : ");
-                            System.out.println("                                     ");
+                            System.out.println("==-------***----------MENU-----------***--------==");
+                            System.out.println("==1.             Vào trang quản lý              ==");
+                            System.out.println("==                                              ==");
+                            System.out.println("==2.           Xem thông tin tài khoản          ==");
+                            System.out.println("==                                              ==");
+                            System.out.println("==3                Đăng xuất                    ==");
+                            System.out.println("==                                              ==");
+                            System.out.println("--------------Nhập lựa chọn của bạn---------------");
+                            System.out.println("==                                              ==");
                             try {
                                 choice1 = scanner.nextInt();
 //      bắt ngoại lệ1
@@ -67,22 +68,24 @@ public class Main {
                                 case 1:
                                     int choice2 = -1;
                                     do {
-                                        System.out.println("-----------------MENU-----------------");
-                                        System.out.println("1: Thêm thí sinh dự thi");
-                                        System.out.println("                                     ");
-                                        System.out.println("2: Tìm kiếm theo số báo danh");
-                                        System.out.println("                                     ");
-                                        System.out.println("3: Đọc thí sinh trên file");
-                                        System.out.println("                                     ");
-                                        System.out.println("4: Phân loại thí sinh theo khối");
-                                        System.out.println("                                     ");
-                                        System.out.println("5: Xoá thí sinh dự thi");
-                                        System.out.println("                                     ");
-                                        System.out.println("6: Sửa thông tin thí sinh dự thi");
-                                        System.out.println("                                     ");
-                                        System.out.println("7: Sắp xếp thí sinh dự thi theo số báo danh");
-                                        System.out.println("                                     ");
-                                        System.out.println("8:  -------Exit-------");
+                                        System.out.println("==-------***----------MENU-----------***--------==");
+                                        System.out.println("==1:            Thêm thí sinh dự thi            ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("==2:         Tìm kiếm theo số báo danh          ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("==3:           Đọc thí sinh trên file           ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("==4:        Phân loại thí sinh theo khối        ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("==5:           Xoá thí sinh dự thi              ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("==6:         Sửa thông tin thí sinh             ==");
+                                        System.out.println("==                                               =");
+                                        System.out.println("==7:  Sắp xếp thí sinh dự thi theo số báo danh  ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("==8:         Hiển Thị Danh Sách Thí Sinh        ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("==9:----***-------------Exit---------***--------==");
 
                                         try {
                                             choice2 = scanner.nextInt();
@@ -104,11 +107,18 @@ public class Main {
                                             System.out.println("nhập khối thi");
                                             String block = scanner.nextLine();
                                             mc.add(new Candidate(idNumber, name1, address, block));
-                                            mc.display();
                                         } else if (choice2 == 2) {
 //       tìm kiem theo so bao danh
+                                            int idNumber=-1;
+                                            //xoá thí sinh
                                             System.out.println("nhập số báo danh ");
-                                            int idNumber = scanner.nextInt();
+                                            try {
+                                                idNumber= scanner.nextInt();
+//      bắt ngoại lệ1
+                                            } catch (InputMismatchException a) {
+                                                System.err.println("nhập sai , Nhập số đê!!!!");
+                                                scanner.nextLine();
+                                            }
                                             mc.seachById(idNumber);
 
                                         } else if (choice2 == 3) {
@@ -121,29 +131,40 @@ public class Main {
                                             String block = scanner.nextLine();
                                             mc.seachByBlock(block);
                                         } else if (choice2 == 5) {
+                                            int idNumber=-1;
                                             //xoá thí sinh
                                             System.out.println("nhập số báo danh ");
-                                            int idNumber = scanner.nextInt();
+                                            try {
+                                                idNumber= scanner.nextInt();
+//      bắt ngoại lệ1
+                                            } catch (InputMismatchException a) {
+                                                System.err.println("nhập sai , Nhập số đê!!!!");
+                                                scanner.nextLine();
+                                            }
                                             mc.delete(idNumber);
                                         } else if (choice2 == 6) {
+                                            int idNumber1=-1;
                                             System.out.println("nhập số báo danh ");
-                                            int idNumber1 = scanner.nextInt();
-                                            System.out.println("nhập số báo danh ");
-                                            scanner.nextLine();
-                                            int idNumber = scanner.nextInt();
-                                            scanner.nextLine();
-                                            System.out.println("nhập họ tên ");
-                                            String name1 = scanner.nextLine();
-                                            System.out.println("nhập địa chỉ ");
-                                            String address = scanner.nextLine();
+                                            try {
+                                                idNumber1= scanner.nextInt();
+//      bắt ngoại lệ1
+                                            } catch (InputMismatchException a) {
+                                                System.err.println("nhập sai , Nhập số đê!!!!");
+                                                scanner.nextLine();
+                                            }
                                             System.out.println("nhập khối thi");
+                                            scanner.nextLine();
                                             String block = scanner.nextLine();
-                                            mc.edit(idNumber1, new Candidate(idNumber, name1, address, block));
+                                            mc.edit(idNumber1,
+                                                    new Candidate( block));
                                         } else if (choice2 == 7) {
                                             mc.sortInId();
                                             mc.display();
                                         }
-                                    } while (choice2 != 8);
+                                        else if(choice2==8){
+                                            mc.display();
+                                        }
+                                    } while (choice2 != 9);
                                     break;
 
                                 case 2:
@@ -151,11 +172,11 @@ public class Main {
                                     manegeUser.displayInfor(name, pass);
                                     int choice3 = -1;
                                     do {
-                                        System.out.println("1.Đổi mật khẩu : ");
-                                        System.out.println("                                     ");
-                                        System.out.println("2.Quay lại : ");
-                                        System.out.println("                                     ");
-                                        System.out.println("Nhập lựa chọn của bạn : ");
+                                        System.out.println("==1                 Đổi mật khẩu                ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("==2                  Quay lại                   ==");
+                                        System.out.println("==                                              ==");
+                                        System.out.println("---------------NHẬP LỰA CHỌN CỦA BẠN--------------");
                                         try {
                                             choice3 = scanner.nextInt();
 //      bắt ngoại lệ1
@@ -202,8 +223,8 @@ public class Main {
 
                 case 2:
                     do {
-                        System.out.println("Chào mừng bạn đến với trang đăng kí !");
-                        System.out.println("                                     ");
+                        System.out.println("======Chào mừng bạn đến với trang đăng kí !=======");
+                        System.out.println("==                                              ==");
                         System.out.println("Nhập username : ");
                         sc.nextLine();
                         name= sc.nextLine();
