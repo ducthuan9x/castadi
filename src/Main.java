@@ -2,8 +2,7 @@ import ManegeCandidate.ManegeCandidate;
 
 import File.CandidateFile;
 import Normal.Candidate;
-
-import java.io.File;
+import File.UserFile;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -153,10 +152,23 @@ public class Main {
                                                 System.err.println("nhập sai , Nhập số đê!!!!");
                                                 scanner.nextLine();
                                             }
-                                            System.out.println("nhập khối thi");
+                                            int idNumber=-1;
+                                            System.out.println("nhập số báo danh ");
+                                            try {
+                                                idNumber= scanner.nextInt();
+//      bắt ngoại lệ1
+                                            } catch (InputMismatchException a) {
+                                                System.err.println("nhập sai , Nhập số đê!!!!");
+                                                scanner.nextLine();
+                                            }
+                                            System.out.println("nhập họ tên ");
                                             scanner.nextLine();
+                                            String name1 = scanner.nextLine();
+                                            System.out.println("nhập địa chỉ ");
+                                            String address = scanner.nextLine();
+                                            System.out.println("nhập khối thi");
                                             String block = scanner.nextLine();
-                                            mc.edit(idNumber1, new Candidate( block));
+                                            mc.edit(idNumber1, new Candidate( idNumber,name1,address,block));
                                             CandidateFile.writeToFile(mc.getCandidateList());
                                         } else if (choice2 == 7) {
                                             mc.sortInId();
@@ -192,10 +204,10 @@ public class Main {
                                                     user1.setName(name);
                                                     String oldPass = pass;
                                                     System.out.println("Nhập mật khẩu mới : ");
-                                                    sc.nextLine();
                                                     pass = sc.nextLine();
                                                     user1.setPass(pass);
                                                     manegeUser.edit(name, oldPass, user1);
+                                                    UserFile.writeToFile(manegeUser.getUserList());
                                                     System.out.println("Bạn đã thay đổi mật khẩu thành công :");
                                                 }
                                                 break;
@@ -206,7 +218,7 @@ public class Main {
                                                 } while (!flag.equals("y"));
                                                 break;
                                         }
-                                    } while (choice3 != 3);
+                                    } while (choice3 != 2);
                                     break;
                                 case 3:
                                     do {

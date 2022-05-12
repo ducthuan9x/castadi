@@ -21,6 +21,23 @@ public class ManegeUser {
     public ManegeUser(List<User> userList) {
         this.userList = userList;
     }
+
+    public UserFile getUserFile() {
+        return userFile;
+    }
+
+    public void setUserFile(UserFile userFile) {
+        this.userFile = userFile;
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+
     public void add(User user) throws FileNotFoundException {
         userList.add(user);
         System.out.println("Bạn đã đăng kí thành công ");
