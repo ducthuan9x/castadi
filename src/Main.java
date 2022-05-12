@@ -142,6 +142,7 @@ public class Main {
                                                 scanner.nextLine();
                                             }
                                             mc.delete(idNumber);
+                                            CandidateFile.writeToFile(mc.getCandidateList());
                                         } else if (choice2 == 6) {
                                             int idNumber1=-1;
                                             System.out.println("nhập số báo danh ");
@@ -155,8 +156,8 @@ public class Main {
                                             System.out.println("nhập khối thi");
                                             scanner.nextLine();
                                             String block = scanner.nextLine();
-                                            mc.edit(idNumber1,
-                                                    new Candidate( block));
+                                            mc.edit(idNumber1, new Candidate( block));
+                                            CandidateFile.writeToFile(mc.getCandidateList());
                                         } else if (choice2 == 7) {
                                             mc.sortInId();
                                             mc.display();
